@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include <algorithm>
+//#include <algorithm>
 #include <qdebug.h>
 double hrcalc(int array[100])
 {

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui charts network multimedia multimediawidgets
+QT       += core gui charts network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,11 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     weather.cpp \
-    calc.cpp
+    calc.cpp \
+    MAX30102.cpp
 
 HEADERS  += mainwindow.h \
     weather.h \
-    calc.h
+    calc.h \
+    i2c-dev.h \
+    MAX30102.h
 
 FORMS    += mainwindow.ui
 

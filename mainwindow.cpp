@@ -15,32 +15,103 @@
 #include "weather.h"
 #include <qdebug.h>
 #include "calc.h"
-#include <QMediaPlayer>
-#include <QVideoWidget>
-#include <QFileDialog>
-#include <QFile>
+#include <QTimer>
+#include "MAX30102.h"
+#include "stdio.h"
 using namespace QtCharts;
 using namespace std;
+//C Extension python
 #undef slots
 #include "/usr/include/python3.5m/Python.h"
 #define slots Q_SLOTS
-QMediaPlayer* player;
+MAX30102 heartSensor;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //weather
     weather=new Weather(QStringLiteral("无锡"));
-    player = new QMediaPlayer(this);
-    player->setVideoOutput(ui->widget);
+    //buttons
     connect(ui->startButton,SIGNAL(clicked()), this,SLOT(startPlot()));
     connect(ui->stopButton,SIGNAL(clicked()), this,SLOT(stopPlot()));
-    //connect(ui->tabWidget,SIGNAL(tabBarClicked(2)),this,SLOT(mediaPlay()));
-    connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(mediaPlay()));
     connect(weather,SIGNAL(getDataSuccessedSignal()),this,SLOT(weatherUpdate()));
+    //connect(ui->tabWidget,SIGNAL(tabBarClicked(2)),this,SLOT(startRead());
+    //MAX30102
+    int result = heartSensor.begin();
+        if (result < 0) {
+            qDebug() << "Failed to start I2C (Error: " << result << ")." << endl;
+        }
+    qDebug() << "Device found (revision: " << result << ")!" << endl;
+
+    heartSensor.setup();
+    redTimer = new QTimer(this);
+    irTimer = new QTimer(this);
+    connect(redTimer,SIGNAL(timeout()),this,SLOT(startRead()));
+    connect(irTimer,SIGNAL(timeout()),this,SLOT(startIR()));
+    redTimer->start(200);
+    irTimer->start(200);
+    maxsize=100;
+    maxX=300;maxY=150000;
+    redSeries = new QSplineSeries();
+    irSeries= new QSplineSeries();
+    redChart = new QChart();
+    redChart->addSeries(redSeries);
+    redChart->addSeries(irSeries);
+    redChart->legend()->hide();
+    redChart->setTitle("RealTime Data Chart");
+    redChart->createDefaultAxes();
+    redChart->axisX()->setRange(0, 300);
+    redChart->axisY()->setRange(0, maxY);
+    ui->graphicsView_2->setChart(redChart);
+    ui->graphicsView_2->setRenderHint(QPainter::Antialiasing);
 
 
+
+
+}
+void MainWindow::startRead()
+{
+    uint32_t temp = heartSensor.getRed();
+    redReceived(temp);
+    //qDebug()<<"read"<<temp;
+}
+void MainWindow::startIR()
+{
+    uint32_t temp = heartSensor.getIR();
+    irReceived(temp);
+    //qDebug()<<"read"<<temp;
+}
+void MainWindow::redReceived(uint32_t value)
+{
+    redData << value;
+    //qDebug()<<"size"<<redData.size();
+    while (redData.size() > maxsize) {
+            redData.removeFirst();
+        }
+    redSeries->clear();
+
+    for (int i=0;i<redData.size();i++)
+    {
+        redSeries->append(i*3,redData.at(i));
+
+    }
+}
+void MainWindow::irReceived(uint32_t value)
+{
+    irData << value;
+    //qDebug()<<"size"<<redData.size();
+    while (irData.size() > maxsize) {
+            irData.removeFirst();
+        }
+    irSeries->clear();
+
+    for (int i=0;i<irData.size();i++)
+    {
+        irSeries->append(i*3,irData.at(i));
+
+    }
 }
 void MainWindow::weatherUpdate()
 {
@@ -52,9 +123,6 @@ void MainWindow::mediaPlay()
 
     //playlist = new QMediaPlaylist;
     //playlist->addMedia(QUrl("/***/test1.mp4"));
-    player->setMedia(QUrl::fromLocalFile("/home/pi/1617283214156.mp4"));
-    ui->widget->show();
-    player->play();
 
 
 }
