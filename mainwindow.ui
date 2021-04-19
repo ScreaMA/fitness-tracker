@@ -6,39 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>749</width>
-    <height>536</height>
+    <width>574</width>
+    <height>361</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>20</y>
-      <width>141</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Fitness-tracker</string>
-    </property>
-   </widget>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>50</y>
-      <width>701</width>
-      <height>421</height>
+      <x>10</x>
+      <y>0</y>
+      <width>561</width>
+      <height>301</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -51,8 +33,8 @@
      <widget class="QPushButton" name="startButton">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>50</y>
+        <x>430</x>
+        <y>10</y>
         <width>92</width>
         <height>28</height>
        </rect>
@@ -64,8 +46,8 @@
      <widget class="QPushButton" name="stopButton">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>90</y>
+        <x>430</x>
+        <y>40</y>
         <width>92</width>
         <height>28</height>
        </rect>
@@ -77,8 +59,8 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>140</y>
+        <x>430</x>
+        <y>80</y>
         <width>67</width>
         <height>21</height>
        </rect>
@@ -92,16 +74,16 @@
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>541</width>
-        <height>331</height>
+        <width>401</width>
+        <height>211</height>
        </rect>
       </property>
      </widget>
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>190</y>
+        <x>430</x>
+        <y>110</y>
         <width>91</width>
         <height>31</height>
        </rect>
@@ -118,8 +100,8 @@
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
        <rect>
-        <x>582</x>
-        <y>230</y>
+        <x>430</x>
+        <y>140</y>
         <width>101</width>
         <height>33</height>
        </rect>
@@ -128,8 +110,8 @@
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>280</y>
+        <x>430</x>
+        <y>180</y>
         <width>91</width>
         <height>21</height>
        </rect>
@@ -146,11 +128,29 @@
      <widget class="QLineEdit" name="lineEdit_3">
       <property name="geometry">
        <rect>
-        <x>582</x>
-        <y>310</y>
+        <x>430</x>
+        <y>210</y>
         <width>101</width>
         <height>33</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>240</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>PIBand</string>
       </property>
      </widget>
     </widget>
@@ -161,24 +161,27 @@
      <widget class="QCalendarWidget" name="calendarWidget">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>40</y>
-        <width>371</width>
-        <height>311</height>
+        <x>10</x>
+        <y>20</y>
+        <width>311</width>
+        <height>231</height>
        </rect>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>50</y>
+        <x>340</x>
+        <y>20</y>
         <width>111</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Today's Count:</string>
+       <string>Today's Plan</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit">
@@ -191,17 +194,14 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QPlainTextEdit" name="plainTextEdit">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>80</y>
-        <width>72</width>
-        <height>15</height>
+        <x>330</x>
+        <y>50</y>
+        <width>201</width>
+        <height>101</height>
        </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -217,7 +217,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>749</width>
+     <width>574</width>
      <height>31</height>
     </rect>
    </property>
