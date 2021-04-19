@@ -1,6 +1,7 @@
 # PiBand
 
 <!--Contents-->
+![real photo](https://github.com/ScreaMA/fitness-tracker/blob/main/IMG_4044.JPG)
 ## Contents
 
 <ol>
