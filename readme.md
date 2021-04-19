@@ -45,4 +45,4 @@ There's a python script using i2c to collect real-time data from MAX30102, then 
 
 [Yuecheng Ma(2583367M)](https://github.com/ScreaMA)\
 [Min Gong(2567841G)](https://github.com/Mia-mg)\
-Wenjian Cao(2588004C)
+[Wenjian Cao(2588004C)](https://github.com/1162831294-wenjian)
