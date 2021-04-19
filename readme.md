@@ -1,32 +1,41 @@
 # PiBand
 
+<!--Contents-->
 ## Contents
 
-- [Description](### Descri[tion)
-- [Hardware](### Hardware)
-- [How to work](### How to work)
-- [demo on Social-Media](### demo on Social-Media)
-- [Members](### Members)
+<ol>
+    <li><a href="### Description">Description</a></li>
+    <li><a href="### Hardware">Hardware</a></li>
+    <li><a href="### How to work">How to work</a></li>
+    <li><a href="### demo on Social-Media">demo on Social-Media</a></li>
+    <li><a href="### Members">Members</a></li>
+   
+</ol>
 
+<!--Description-->
 ###  Description
 
 This project aims to design a device that can be your personal fitness assistant. Fitness Tracker can measure your heart-rate and blood oxygen in real time. 
 
+<!--Hardware-->
 ###  Hardware
 
 Raspberry pi\
 Sensor(MAX30102)\
 Screen
 
+<!--How to work-->
 ###  How to work
 
 There's a python script using i2c to collect real-time data from MAX30102, then use C-Extension Python API to convert the data into visible charts in the QT interface. Meanwhile the  webpage can receive the data.
 
+<!--demo on Social-Media-->
 ###  demo on Social-Media
 
 bilibili\
 [youtube](https://youtu.be/fK_FMEablm8)
 
+<!--Members-->
 ###  Members
 
 [Yuecheng Ma(2583367M)](https://github.com/ScreaMA)\
