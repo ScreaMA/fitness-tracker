@@ -1,7 +1,6 @@
 # PiBand
 
 ![logo](https://github.com/ScreaMA/fitness-tracker/blob/main/image/logo.png)
-   <img src="images/logo.png" alt="Logo">
 
 <!--Contents-->
 
