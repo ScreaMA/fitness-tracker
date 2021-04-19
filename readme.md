@@ -1,5 +1,13 @@
 # PiBand
 
+## Contents
+
+[Description](### Descri[tion)
+[Hardware](### Hardware)
+[How to work](### How to work)
+[demo on Social-Media](### demo on Social-Media)
+[Members](### Members)
+
 ###  Description
 
 This project aims to design a device that can be your personal fitness assistant. Fitness Tracker can measure your heart-rate and blood oxygen in real time. 
@@ -21,4 +29,6 @@ bilibili\
 
 ###  Members
 
-Yuecheng Ma(2583367M),Min Gong(2567841G),Wenjian Cao(2588004C)
+[Yuecheng Ma(2583367M)](https://github.com/ScreaMA)\
+[Min Gong(2567841G)](https://github.com/Mia-mg)\
+Wenjian Cao(2588004C)
