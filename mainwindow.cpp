@@ -15,22 +15,29 @@
 #include "weather.h"
 #include <qdebug.h>
 #include "calc.h"
+#include <QMediaPlayer>
+#include <QVideoWidget>
+#include <QFileDialog>
+#include <QFile>
 using namespace QtCharts;
 using namespace std;
 #undef slots
 #include "/usr/include/python3.5m/Python.h"
 #define slots Q_SLOTS
+QMediaPlayer* player;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     weather=new Weather(QStringLiteral("无锡"));
-
-
+    player = new QMediaPlayer(this);
+    player->setVideoOutput(ui->widget);
     connect(ui->startButton,SIGNAL(clicked()), this,SLOT(startPlot()));
     connect(ui->stopButton,SIGNAL(clicked()), this,SLOT(stopPlot()));
-    //connect(ui->tabWidget,SIGNAL(tabBarClicked(1)),this,SLOT(weatherUpdate()));
+    //connect(ui->tabWidget,SIGNAL(tabBarClicked(2)),this,SLOT(mediaPlay()));
+    connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(mediaPlay()));
     connect(weather,SIGNAL(getDataSuccessedSignal()),this,SLOT(weatherUpdate()));
 
 
@@ -38,6 +45,17 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::weatherUpdate()
 {
     ui->lineEdit_5->setText(weather->getWenDu());
+
+}
+void MainWindow::mediaPlay()
+{
+
+    //playlist = new QMediaPlaylist;
+    //playlist->addMedia(QUrl("/***/test1.mp4"));
+    player->setMedia(QUrl::fromLocalFile("/home/pi/1617283214156.mp4"));
+    ui->widget->show();
+    player->play();
+
 
 }
 void MainWindow::startPlot()

@@ -24,6 +24,7 @@ private slots:
     void startPlot();
     void stopPlot();
     void weatherUpdate();
+    void mediaPlay();
 };
 
 #endif // MAINWINDOW_H

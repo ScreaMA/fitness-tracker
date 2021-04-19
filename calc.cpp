@@ -28,11 +28,11 @@ double average(int *x, int len)
 
 double sum = 0;
 
-for (int i = 2; i < len; i++) // 求总和
+for (int i = 2; i < len; i++)
 
 sum += x[i];
 
-return sum/len-2; // 返回平均值
+return sum/len-2;
 
 }
 int maxElement(int array[100])

@@ -21,27 +21,27 @@ public:
     explicit Weather(QString cityName = "");
 
 public:
-    void setCityName(QString cityName); //设置城市名
-    QString getCityName();              //获取城市名
-    QString getDate();                  //获取当前日期
-    QString getFengLi();                //获取风向风力
-    QString getWenDu();                 //获取温度范围
-    QString getTianQiType();            //获取天气类型
-    QString getCurrentWendu();          //获取当前温度
-    QString getGanMaoInfo();            //获取感冒提示
-    QString getAllInfo();               //获取原始的所有字段
-    bool isGetDataSuccessd();           //是否成功获取数据
-    void refresh();                     //刷新
+    void setCityName(QString cityName);
+    QString getCityName();
+    QString getDate();
+    QString getFengLi();
+    QString getWenDu();
+    QString getTianQiType();
+    QString getCurrentWendu();
+    QString getGanMaoInfo();
+    QString getAllInfo();
+    bool isGetDataSuccessd();
+    void refresh();
     QMap<QString, QMap<QString, QString> > getDataMap(bool *ok=nullptr);    //获取昨天以及未来5天的天气预测
-    void print_Debug_allinfoMap();      //调试打印所有信息
+    void print_Debug_allinfoMap();
 
 signals:
-    void getDataFinisedSignal();//获取数据结束的信号
-    void getDataSuccessedSignal();//获取数据成功的信号
-    void getDataFailedSignal();//获取数据失败的信号
+    void getDataFinisedSignal();
+    void getDataSuccessedSignal();
+    void getDataFailedSignal();
 
 public slots:
-    void replyFinished(QNetworkReply *reply);//刷新的槽
+    void replyFinished(QNetworkReply *reply);
 
 private:
     void queryWeather();//查询
@@ -50,8 +50,7 @@ private:
     QString cityName;
     QNetworkAccessManager *manager;  //请求句柄
     QString allinfo;       //所有信息
-    //以下皆是当天，未来几天的数据框通过获取日期的数据列表
-    QString date;//当前日期
+    QString date;
     QString fengli;       //风力
     QString wendu;        //温度
     QString currentwendu;//当前温度
