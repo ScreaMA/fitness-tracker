@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>574</width>
-    <height>361</height>
+    <height>329</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,11 @@
       <x>10</x>
       <y>0</y>
       <width>561</width>
-      <height>301</height>
+      <height>261</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -59,8 +59,8 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>80</y>
+        <x>350</x>
+        <y>180</y>
         <width>67</width>
         <height>21</height>
        </rect>
@@ -72,10 +72,10 @@
      <widget class="QtCharts::QChartView" name="graphicsView">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>401</width>
-        <height>211</height>
+        <x>10</x>
+        <y>10</y>
+        <width>411</width>
+        <height>171</height>
        </rect>
       </property>
      </widget>
@@ -83,7 +83,7 @@
       <property name="geometry">
        <rect>
         <x>430</x>
-        <y>110</y>
+        <y>80</y>
         <width>91</width>
         <height>31</height>
        </rect>
@@ -101,7 +101,7 @@
       <property name="geometry">
        <rect>
         <x>430</x>
-        <y>140</y>
+        <y>110</y>
         <width>101</width>
         <height>33</height>
        </rect>
@@ -111,7 +111,7 @@
       <property name="geometry">
        <rect>
         <x>430</x>
-        <y>180</y>
+        <y>150</y>
         <width>91</width>
         <height>21</height>
        </rect>
@@ -129,7 +129,7 @@
       <property name="geometry">
        <rect>
         <x>430</x>
-        <y>210</y>
+        <y>180</y>
         <width>101</width>
         <height>33</height>
        </rect>
@@ -138,8 +138,8 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>240</y>
+        <x>10</x>
+        <y>190</y>
         <width>141</width>
         <height>16</height>
        </rect>
@@ -164,7 +164,7 @@
         <x>10</x>
         <y>20</y>
         <width>311</width>
-        <height>231</height>
+        <height>191</height>
        </rect>
       </property>
       <property name="locale">
@@ -197,11 +197,70 @@
      <widget class="QPlainTextEdit" name="plainTextEdit">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>340</x>
         <y>50</y>
         <width>201</width>
-        <height>101</height>
+        <height>81</height>
        </rect>
+      </property>
+      <property name="plainText">
+       <string>fish for lunch 
+riding 30mins</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>150</y>
+        <width>67</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>City</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>140</y>
+        <width>111</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Wuxi</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>190</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Temperture</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>180</y>
+        <width>111</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>

@@ -12,6 +12,9 @@
 #include <QChart>
 #include <QtCharts>
 #include <QSplineSeries>
+#include "weather.h"
+#include <qdebug.h>
+#include "calc.h"
 using namespace QtCharts;
 using namespace std;
 #undef slots
@@ -22,14 +25,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    weather=new Weather(QStringLiteral("无锡"));
 
 
     connect(ui->startButton,SIGNAL(clicked()), this,SLOT(startPlot()));
     connect(ui->stopButton,SIGNAL(clicked()), this,SLOT(stopPlot()));
+    //connect(ui->tabWidget,SIGNAL(tabBarClicked(1)),this,SLOT(weatherUpdate()));
+    connect(weather,SIGNAL(getDataSuccessedSignal()),this,SLOT(weatherUpdate()));
+
 
 }
+void MainWindow::weatherUpdate()
+{
+    ui->lineEdit_5->setText(weather->getWenDu());
 
+}
 void MainWindow::startPlot()
 {
     ui->label_4->setText("loading...");
@@ -129,18 +139,18 @@ void MainWindow::startPlot()
      QPointF points[100]={};
      QSplineSeries *splineSeries1 = new QSplineSeries();
      QSplineSeries *splineSeries2 = new QSplineSeries();
-     double hrpeak=0;
      splineSeries1->setName("MAX30102");
      for (int i=2;i<100;i++)
      {
-         points[i]=QPointF(5*i,(ared[i]));
+         points[i]=QPointF(10*i,(ared[i]));
          *splineSeries1 << points[i];
-         if (i>=3&&(ared[i]<ared[i-3])&&(ared[i]<ared[i-2])&&(ared[i]<ared[i-1])&&(ared[i]<ared[i+1])&&(ared[i]<ared[i+2])&&(ared[i]<ared[i+3]))
-             hrpeak+=1;
-         points[i]=QPointF(5*i,(air[i]));
+         points[i]=QPointF(10*i,(air[i]));
          *splineSeries2 << points[i];
      }
-     ui->lineEdit_2->setText(QString::number(hrpeak/1.5/5.2*60,10,2));
+     double hr = hrcalc(ared);
+     ui->lineEdit_2->setText(QString::number(hr,10,2));
+     double SpO2 = SpO2Calc(ared,air);
+     ui->lineEdit_3->setText(QString::number(SpO2,10,2));
      QChart *chart = new QChart();
      chart->addSeries(splineSeries1);
      chart->addSeries(splineSeries2);

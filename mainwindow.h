@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "weather.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,10 +18,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    Weather *weather;
 
 private slots:
     void startPlot();
     void stopPlot();
+    void weatherUpdate();
 };
 
 #endif // MAINWINDOW_H
