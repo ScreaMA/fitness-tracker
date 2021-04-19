@@ -1,5 +1,9 @@
 # PiBand
 
+<a href="https://github.com/ScreaMA/fitness-tracker/blob/main/image/logo.png">
+   <img src="images/logo.png" alt="Logo">
+</a>
+
 <!--Contents-->
 
 ## Contents
@@ -23,7 +27,7 @@ This project aims to design a device that can be your personal fitness assistant
 
 Raspberry pi\
 Sensor(MAX30102)\
-Screen
+Screen\
 ![real photo](https://github.com/ScreaMA/fitness-tracker/blob/main/IMG_4044.JPG)
 <!--How to work-->
 ###  How to work
