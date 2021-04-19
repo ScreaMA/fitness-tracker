@@ -37,7 +37,7 @@ There's a python script using i2c to collect real-time data from MAX30102, then 
 <!--demo on Social-Media-->
 ###  demo on Social-Media
 
-bilibili\
+[bilibili](https://www.bilibili.com/video/BV1B64y1m7J4/)\
 [youtube](https://youtu.be/fK_FMEablm8)
 
 <!--Members-->
